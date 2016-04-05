@@ -34,6 +34,28 @@
             "kind": "ImageStream",
             "apiVersion": "v1",
             "metadata": {
+                "name": "your-own-custom-image-stream-template"
+            },
+            "spec": {
+                "dockerImageRepository": "registry.access.redhat.com/jboss-fuse-6/fis-java-openshift",
+                "tags": [
+                    {
+                        "name": "1.0",
+                        "annotations": {
+                            "description": "Internal Security approved JBoss Fuse Integration Services 6.2.1 Java S2I images.",
+                            "iconClass": "icon-jboss",
+                            "tags": "builder,jboss-fuse,java,xpaas",
+                            "supports":"jboss-fuse:6.2.1,java:8,xpaas:1.2",
+                            "version": "1.0"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "kind": "ImageStream",
+            "apiVersion": "v1",
+            "metadata": {
                 "name": "fis-karaf-openshift"
             },
             "spec": {
